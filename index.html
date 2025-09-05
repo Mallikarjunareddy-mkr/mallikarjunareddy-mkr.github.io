@@ -4,10 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Malli Karjuna Reddy - Portfolio</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
   <style>
     body {
       margin: 0;
@@ -15,124 +13,70 @@
       font-family: 'Inter', sans-serif;
       background: #0f172a;
       color: #e2e8f0;
-      line-height: 1.6;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
-
     .top {
       display: flex;
       gap: 50px;
       max-width: 1100px;
-      width: 100%;
       flex-wrap: wrap;
       align-items: center;
-      margin-bottom: 60px;
+      margin-bottom: 50px;
     }
-
-    .top img {
+    img {
       width: 220px;
       height: 220px;
       border-radius: 16px;
       object-fit: cover;
       box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
     }
-
-    .info {
-      flex: 1;
-    }
-
     h1 {
-      font-size: 2.4rem;
-      font-weight: 700;
       margin: 0;
+      font-size: 2.4rem;
       letter-spacing: 0.8px;
     }
-
-    .title {
-      font-size: 1.3rem;
-      color: #94a3b8;
-      margin: 6px 0;
-    }
-
-    .stack {
-      font-weight: 600;
-      color: #3b82f6;
-      margin-top: 6px;
-    }
-
+    .title { font-size: 1.2rem; color: #94a3b8; }
+    .stack { font-weight: 600; color: #3b82f6; margin-top: 6px; }
     .links {
-      margin-top: 20px;
-      display: flex;
-      gap: 24px;
+      margin-top: 18px;
       font-size: 1.6rem;
+      display: flex;
+      gap: 20px;
     }
-
-    .links a {
-      color: #3b82f6;
-      text-decoration: none;
-    }
-
-    .links a:hover {
-      color: #60a5fa;
-    }
-
-    .section {
+    .links a { color: #3b82f6; text-decoration: none; }
+    .links a:hover { color: #60a5fa; }
+    section {
       max-width: 1100px;
-      width: 100%;
-      border-top: 1px solid #334155;
-      padding-top: 40px;
-      margin-top: 20px;
+      margin-top: 40px;
     }
-
-    .section h2 {
-      font-size: 1.5rem;
+    section h2 {
+      font-size: 1.6rem;
       color: #3b82f6;
       margin-bottom: 16px;
-      border-bottom: 2px solid #334155;
-      padding-bottom: 6px;
       letter-spacing: 1px;
     }
-
-    .section p, .section li {
-      font-size: 1.05rem;
-      margin-bottom: 10px;
+    section p, section li {
+      font-size: 1.1rem;
+      line-height: 1.8;
       letter-spacing: 0.3px;
     }
-
     .skills {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
     }
-
     .skills span {
       background: #1e293b;
-      padding: 8px 14px;
+      border: 1px solid #3b82f6;
       border-radius: 6px;
-      border: 1.5px solid #3b82f6;
+      padding: 8px 14px;
       font-weight: 600;
     }
-
     @media (max-width: 768px) {
-      body {
-        padding: 30px 15px;
-      }
-
-      .top {
-        flex-direction: column;
-        gap: 30px;
-      }
-
-      h1 {
-        font-size: 2rem;
-        text-align: center;
-      }
-
-      .info {
-        text-align: center;
-      }
+      body { padding: 30px 15px; }
+      .top { flex-direction: column; text-align: center; gap: 30px; }
     }
   </style>
 </head>
@@ -140,7 +84,7 @@
 
   <div class="top">
     <img src="https://mallikarjunareddy-mkr.github.io/personal/mkr1.jpg" alt="Malli Karjuna Reddy" />
-    <div class="info">
+    <div>
       <h1>Malli Karjuna Reddy</h1>
       <div class="title">Full Stack Developer</div>
       <div class="stack">ReactJS • Python • FastAPI • MongoDB • SQL</div>
@@ -152,45 +96,34 @@
     </div>
   </div>
 
-  <div class="section">
+  <section>
     <h2>About Me</h2>
-    <p>
-      I’m a full stack developer focused on building modern, scalable web applications using ReactJS, Python, FastAPI, and MongoDB.
-      I enjoy clean, maintainable code and solving real-world problems through tech.
-    </p>
-  </div>
+    <p>I’m a full stack developer focused on building modern, scalable web applications using ReactJS, Python, FastAPI, and MongoDB. I enjoy clean, maintainable code and solving real-world problems with practical solutions.</p>
+  </section>
 
-  <div class="section">
+  <section>
     <h2>Skills</h2>
     <div class="skills">
-      <span>ReactJS</span>
-      <span>Python</span>
-      <span>FastAPI</span>
-      <span>MongoDB</span>
-      <span>SQL</span>
-      <span>JavaScript</span>
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>Git</span>
-      <span>GitHub</span>
+      <span>ReactJS</span><span>Python</span><span>FastAPI</span><span>MongoDB</span><span>SQL</span>
+      <span>JavaScript</span><span>HTML</span><span>CSS</span><span>Git</span><span>GitHub</span>
     </div>
-  </div>
+  </section>
 
-  <div class="section">
+  <section>
     <h2>Projects</h2>
     <ul>
-      <li><strong>Portfolio Website</strong> – Personal website built with HTML, CSS, and JavaScript.</li>
-      <li><strong>Task Manager App</strong> – Full stack app using React + FastAPI + MongoDB for task tracking.</li>
-      <li><strong>Student Dashboard</strong> – Web app to manage and analyze academic performance.</li>
+      <li><strong>Portfolio Website</strong> – Built using HTML, CSS, and JavaScript.</li>
+      <li><strong>Task Manager App</strong> – React + FastAPI + MongoDB for full-stack task management.</li>
+      <li><strong>Student Dashboard</strong> – Academic performance tracking web app.</li>
     </ul>
-  </div>
+  </section>
 
-  <div class="section">
+  <section>
     <h2>Education</h2>
     <p><strong>B.Tech in Computer Science</strong> – Tadipatri Engineering College (2022 – 2026)</p>
     <p><strong>Intermediate</strong> – Narayana Junior College, Anantapur</p>
     <p><strong>SSC</strong> – Narayana E-Techno School, Tadipatri</p>
-  </div>
+  </section>
 
 </body>
 </html>
