@@ -5,105 +5,109 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Malli Karjuna Reddy - Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 <style>
   body {
-    margin: 0; padding: 40px 20px;
-    font-family: 'Inter', sans-serif;
-    background: #0f172a; color: #e2e8f0;
+    margin:0; padding:40px 20px;
+    font-family:'Inter', sans-serif;
+    background:#0f172a; color:#e2e8f0;
   }
   .container {
-    max-width: 1000px; margin: auto;
+    max-width:1000px; margin:auto;
   }
   .profile {
-    display: flex; flex-wrap: wrap; gap: 30px; align-items: center; margin-bottom: 50px;
+    display:flex; flex-wrap:wrap; gap:30px; align-items:center; margin-bottom:50px;
   }
-  .profile img {
-    width: 220px; height: 220px; border-radius: 16px;
-    object-fit: cover;
-    box-shadow: 0 6px 20px rgba(59,130,246,0.3);
+  img {
+    width:220px; height:220px; border-radius:16px;
+    object-fit:cover;
+    box-shadow:0 6px 20px rgba(59,130,246,0.3);
   }
-  .info h1 {
-    margin: 0 0 15px;
-    font-size: 2.5rem;
-    letter-spacing: 0.8px;
+  h1 {
+    margin:0 0 15px;
+    font-size:2.5rem;
+    letter-spacing:0.8px;
   }
-  .about-text {
-    max-width: 600px;
-    color: #94a3b8;
-    line-height: 1.6;
-    font-size: 1.1rem;
+  p.about-text {
+    max-width:600px;
+    color:#94a3b8;
+    line-height:1.6;
+    font-size:1.1rem;
   }
   .links {
-    margin-top: 20px;
-    font-size: 1.6rem;
-    display: flex; gap: 20px;
+    margin-top:20px;
+    font-size:1.6rem;
+    display:flex; gap:20px;
   }
   .links a {
-    color: #3b82f6;
-    text-decoration: none;
+    color:#3b82f6; text-decoration:none;
   }
   .links a:hover {
-    color: #60a5fa;
+    color:#60a5fa;
   }
   section {
-    background: #1e293b;
-    border-radius: 10px;
-    padding: 25px 30px;
-    margin-bottom: 40px;
+    background:#1e293b;
+    border-radius:10px;
+    padding:25px 30px;
+    margin-bottom:40px;
   }
-  section h2 {
-    color: #3b82f6;
-    margin-bottom: 16px;
-    letter-spacing: 1px;
-    font-size: 1.6rem;
+  h2 {
+    color:#3b82f6;
+    margin-bottom:16px;
+    letter-spacing:1px;
+    font-size:1.6rem;
   }
-  .skills {
-    display: flex; flex-wrap: wrap; gap: 12px;
+  .skills, .projects-grid {
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
   }
   .skills span {
-    background: #334155;
-    border: 1px solid #3b82f6;
-    border-radius: 6px;
-    padding: 8px 14px;
-    font-weight: 600;
-    font-size: 0.95rem;
+    background:#334155;
+    border:1px solid #3b82f6;
+    border-radius:6px;
+    padding:8px 14px;
+    font-weight:600;
+    font-size:0.95rem;
   }
   .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-    gap: 24px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+    gap:24px;
   }
   .project-card {
-    background: #334155;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 4px 15px rgba(59,130,246,0.3);
+    background:#334155;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(59,130,246,0.3);
     transition: transform 0.2s ease;
   }
   .project-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 8px 25px rgba(59,130,246,0.5);
+    box-shadow:0 8px 25px rgba(59,130,246,0.5);
   }
   .project-card h3 {
-    color: #3b82f6;
-    margin-top: 0; margin-bottom: 12px;
-    font-size: 1.3rem;
+    margin:0 0 12px;
+    font-size:1.3rem;
+    color:#3b82f6;
   }
   .project-card p {
-    color: #cbd5e1;
-    font-size: 1rem;
-    line-height: 1.5;
+    margin:0;
+    color:#cbd5e1;
+    line-height:1.5;
+    font-weight:400;
+    font-size:1rem;
   }
-  @media (max-width: 768px) {
+  @media (max-width:768px) {
     .profile {
-      flex-direction: column; text-align: center;
+      flex-direction:column;
+      text-align:center;
     }
-    .profile img {
-      margin-bottom: 20px;
+    img {
+      margin-bottom:20px;
     }
-    .about-text {
-      max-width: 100%;
+    p.about-text {
+      max-width:100%;
     }
   }
 </style>
@@ -115,7 +119,7 @@
       <div class="info">
         <h1>Malli Karjuna Reddy</h1>
         <p class="about-text">
-          Full stack developer building scalable web apps with React, Python, FastAPI, and MongoDB. Passionate about clean code and solving real problems.
+          I’m a full stack developer focused on building modern, scalable web applications using ReactJS, Python, FastAPI, and MongoDB. I enjoy writing clean code, building intuitive user interfaces, and solving real-world problems with technology.
         </p>
         <div class="links">
           <a href="https://linkedin.com/in/mallikarjunareddy-g-245748223/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
@@ -138,15 +142,15 @@
       <div class="projects-grid">
         <div class="project-card">
           <h3>Docard</h3>
-          <p>A personal cloud app to securely store documents, notes, and files. Functions as a digital vault for users.</p>
+          <p>A personal cloud app to store documents, notes, and files securely. Users can register and use it like a digital vault or library.</p>
         </div>
         <div class="project-card">
           <h3>Task Manager</h3>
-          <p>Full-stack app with React, FastAPI, and MongoDB for task creation, tracking, and categorization.</p>
+          <p>Full-stack app using React + FastAPI + MongoDB for task creation, tracking, and categorization.</p>
         </div>
         <div class="project-card">
           <h3>Student Dashboard</h3>
-          <p>Helps students manage academic records, schedules, and performance with an intuitive visual interface.</p>
+          <p>Built to help students manage academic records, schedules, and performance visually.</p>
         </div>
       </div>
     </section>
