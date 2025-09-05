@@ -2,112 +2,118 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Photofolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Name | Full Stack Developer</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --bg: #f5f7fa;
+      --text: #1f2937;
+      --accent: #3b82f6;
+    }
+
     body {
+      margin: 0;
       font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-      color: #333;
+      background-color: var(--bg);
+      color: var(--text);
     }
-    header {
-      background: #1f2937;
-      color: white;
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    header p {
-      font-size: 1.1rem;
-      margin-top: 0.5rem;
-    }
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 2rem 1rem;
-    }
-    .section-title {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #1f2937;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-    }
-    .gallery img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
-    .tech-stack {
+
+    .home-section {
       display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+      gap: 3rem;
       flex-wrap: wrap;
-      gap: 1rem;
     }
-    .tech-item {
-      background: #e5e7eb;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
+
+    .profile-pic {
+      flex: 1;
+      max-width: 300px;
     }
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      background: #1f2937;
-      color: white;
+
+    .profile-pic img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .profile-info {
+      flex: 2;
+      max-width: 600px;
+    }
+
+    .profile-info h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .profile-info p {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .links {
+      margin-top: 1.5rem;
+    }
+
+    .links a {
+      text-decoration: none;
+      color: var(--accent);
+      font-weight: bold;
+      margin-right: 1.5rem;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s;
+    }
+
+    .links a:hover {
+      border-color: var(--accent);
+    }
+
+    @media (max-width: 768px) {
+      .home-section {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .profile-info h1 {
+        font-size: 2rem;
+      }
+
+      .links a {
+        display: inline-block;
+        margin: 0.5rem 0.75rem;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Your Name</h1>
-    <p>Full Stack Developer | Python, React, FastAPI, MongoDB</p>
-  </header>
 
-  <main class="container">
-    <section>
-      <h2 class="section-title">📸 Photo Gallery</h2>
-      <div class="gallery">
-        <img src="https://source.unsplash.com/random/400x300?nature" alt="Photo 1" />
-        <img src="https://source.unsplash.com/random/400x301?tech" alt="Photo 2" />
-        <img src="https://source.unsplash.com/random/400x302?city" alt="Photo 3" />
-        <img src="https://source.unsplash.com/random/400x303?people" alt="Photo 4" />
+  <section class="home-section">
+    <!-- Profile Image -->
+    <div class="profile-pic">
+      <img src="https://via.placeholder.com/300x400.png?text=Your+Photo" alt="Profile Photo" />
+    </div>
+
+    <!-- Profile Info -->
+    <div class="profile-info">
+      <h1>Your Name</h1>
+      <p>Full Stack Developer skilled in Python, FastAPI, ReactJS, MongoDB, and SQL. I enjoy building scalable web applications with clean architecture and responsive design.</p>
+      <p>I focus on performance, simplicity, and automation while delivering meaningful digital solutions.</p>
+
+      <!-- Links -->
+      <div class="links">
+        <a href="https://linkedin.com/in/yourname" target="_blank">LinkedIn</a>
+        <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+        <a href="/resume.pdf" target="_blank">Resume</a>
+        <a href="#about">About</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section>
-      <h2 class="section-title">💼 Projects</h2>
-      <ul>
-        <li><strong>Image Gallery API</strong> - FastAPI + MongoDB backend to serve images</li>
-        <li><strong>Portfolio Website</strong> - Built with React and hosted on GitHub Pages</li>
-        <li><strong>SQL Dashboard</strong> - Python app that visualizes SQL analytics</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2 class="section-title">🛠️ Tech Stack</h2>
-      <div class="tech-stack">
-        <div class="tech-item">Python</div>
-        <div class="tech-item">SQL</div>
-        <div class="tech-item">HTML</div>
-        <div class="tech-item">CSS</div>
-        <div class="tech-item">JavaScript</div>
-        <div class="tech-item">ReactJS</div>
-        <div class="tech-item">FastAPI</div>
-        <div class="tech-item">MongoDB</div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 Your Name. All rights reserved.</p>
-  </footer>
 </body>
 </html>
