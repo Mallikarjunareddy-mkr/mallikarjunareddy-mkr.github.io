@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>My Portfolio</title>
+  <title>Malli Karjuna Reddy - Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
-  <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
   <style>
     :root {
       --left-bg: #101828;
@@ -31,43 +31,58 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 20px;
+      justify-content: center;
+      padding: 30px 20px;
+      text-align: center;
     }
 
-    .left-panel img {
-      width: 200px;
-      height: 200px;
+    .profile-img {
+      width: 160px;
+      height: 160px;
       object-fit: cover;
       border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(59, 130, 246, 0.4);
       margin-bottom: 20px;
-      box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
     }
 
-    .social-links-left {
+    .name {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .title {
+      font-size: 0.95rem;
+      color: #94a3b8;
+      margin-bottom: 25px;
+    }
+
+    .social-links {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
       width: 100%;
       max-width: 220px;
     }
 
-    .social-links-left a {
+    .social-links a {
       text-decoration: none;
       color: var(--accent);
       border: 2px solid var(--accent);
-      padding: 10px;
+      padding: 8px 12px;
       border-radius: 6px;
       display: flex;
       align-items: center;
-      gap: 10px;
-      transition: all 0.3s ease;
-      font-weight: 600;
       justify-content: center;
+      gap: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: 0.3s ease;
     }
 
-    .social-links-left a:hover {
-      background: var(--accent);
-      color: #101828;
+    .social-links a:hover {
+      background-color: var(--accent);
+      color: var(--left-bg);
     }
 
     .right-panel {
@@ -79,25 +94,34 @@
       justify-content: center;
     }
 
-    h1 {
-      margin-top: 0;
-      font-size: 2.4rem;
-      margin-bottom: 15px;
+    .right-panel h1 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
     }
 
-    h2 {
-      font-size: 1.3rem;
-      font-weight: 500;
-      margin-bottom: 20px;
-    }
-
-    h3 {
+    .right-panel h2 {
+      font-size: 1rem;
       font-weight: 400;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #475569;
+      padding-bottom: 5px;
+    }
+
+    .education-entry {
+      font-size: 0.95rem;
+      margin-bottom: 15px;
       line-height: 1.6;
     }
 
-    .about-section {
-      margin-top: 20px;
+    .education-entry i {
+      color: var(--accent);
+      margin-right: 8px;
     }
 
     @media (max-width: 768px) {
@@ -111,28 +135,31 @@
         padding: 20px;
       }
 
-      .left-panel {
-        align-items: center;
-      }
-
-      h1 {
-        font-size: 2rem;
-      }
-
-      .social-links-left {
+      .social-links {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
+      }
+
+      .right-panel h1 {
+        font-size: 1.5rem;
+      }
+
+      .right-panel h2 {
+        font-size: 0.95rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Left Panel with Profile and Links -->
+  <!-- Left Panel -->
   <div class="left-panel">
-    <img src="https://mallikarjunareddy-mkr.github.io/personal/mkr1.jpg" alt="My Photo" />
-    <div class="social-links-left">
+    <img class="profile-img" src="https://mallikarjunareddy-mkr.github.io/personal/mkr1.jpg" alt="My Photo" />
+    <div class="name">Malli Karjuna Reddy</div>
+    <div class="title">Full Stack Developer • B.Tech CSE</div>
+
+    <div class="social-links">
       <a href="https://www.linkedin.com/in/mallikarjunareddy-g-245748223/" target="_blank">
         <i class="fab fa-linkedin"></i> LinkedIn
       </a>
@@ -145,23 +172,29 @@
     </div>
   </div>
 
-  <!-- Right Panel with Intro and About -->
+  <!-- Right Panel -->
   <div class="right-panel">
-    <h1>Hi, I'm Malli Karjuna Reddy</h1>
+    <h1>Hello, I'm Malli 👋</h1>
     <h2>
-      I’m a BTech student learning full stack web development.<br>
-      I know Python, ReactJS, FastAPI, MongoDB, and SQL basics.<br>
-      I like building small projects and improving my coding skills every day.
+      I'm a B.Tech student passionate about full stack development.<br>
+      I build responsive web apps using <strong>ReactJS</strong>, <strong>FastAPI</strong>, <strong>MongoDB</strong>, and <strong>Python</strong>.
+      I enjoy turning ideas into functional projects and constantly learning new technologies.
     </h2>
 
-    <div class="about-section">
-      <h1>About Me</h1>
-      <h2>EDUCATION</h2>
-      <h3>
-        B.Tech in Computer Science (2022 – 2026), Tadipatri Engineering College, Tadipatri, India<br><br>
-        PUC (2019 - 2021), Narayana Junior College, Anantapur, India<br><br>
-        10th (2018 - 2019), Narayana E-Techno School, Tadipatri, India
-      </h3>
+    <div>
+      <div class="section-title">🎓 Education</div>
+      <div class="education-entry">
+        <i class="fas fa-university"></i>
+        B.Tech in Computer Science, Tadipatri Engineering College (2022 – 2026)
+      </div>
+      <div class="education-entry">
+        <i class="fas fa-book"></i>
+        PUC, Narayana Junior College, Anantapur (2019 – 2021)
+      </div>
+      <div class="education-entry">
+        <i class="fas fa-school"></i>
+        SSC, Narayana E-Techno School, Tadipatri (2018 – 2019)
+      </div>
     </div>
   </div>
 
