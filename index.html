@@ -47,9 +47,6 @@
   section h2 {
     font-size: 1.6rem; color: #3b82f6; margin-bottom: 16px; letter-spacing: 1px;
   }
-  section p, section li {
-    font-size: 1.05rem; line-height: 1.8; letter-spacing: 0.3px; margin: 6px 0;
-  }
   .skills {
     display: flex; flex-wrap: wrap; gap: 12px;
   }
@@ -57,6 +54,34 @@
     background: #334155; border: 1px solid #3b82f6;
     border-radius: 6px; padding: 8px 14px;
     font-weight: 600; font-size: 0.95rem;
+  }
+  /* Projects card styles */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 24px;
+  }
+  .project-card {
+    background: #334155;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(59,130,246,0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 25px rgba(59,130,246,0.5);
+  }
+  .project-card h3 {
+    margin-top: 0;
+    color: #3b82f6;
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+  }
+  .project-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #cbd5e1;
   }
   @media (max-width: 768px) {
     .profile { flex-direction: column; text-align: center; }
@@ -72,7 +97,7 @@
       <div class="info">
         <h1>Malli Karjuna Reddy</h1>
         <p class="about-text">
-          I’m a full stack developer focused on building modern, scalable web applications using ReactJS, Python, FastAPI, and MongoDB. I enjoy writing clean code, building intuitive user interfaces, and solving real-world problems with technology.
+          Full stack developer building scalable web apps with React, Python, FastAPI, and MongoDB. Passionate about clean code and solving real problems.
         </p>
         <div class="links">
           <a href="https://linkedin.com/in/mallikarjunareddy-g-245748223/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
@@ -92,11 +117,20 @@
 
     <section>
       <h2>Projects</h2>
-      <ul>
-        <li><strong>Docard</strong> – A personal cloud app to store documents, notes, and files securely. Users can register and use it like a digital vault or library.</li>
-        <li><strong>Task Manager</strong> – Full-stack app using React + FastAPI + MongoDB for task creation, tracking, and categorization.</li>
-        <li><strong>Student Dashboard</strong> – Built to help students manage academic records, schedules, and performance visually.</li>
-      </ul>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>Docard</h3>
+          <p>A personal cloud app to securely store documents, notes, and files. Functions as a digital vault for users.</p>
+        </div>
+        <div class="project-card">
+          <h3>Task Manager</h3>
+          <p>Full-stack app with React, FastAPI, and MongoDB for task creation, tracking, and categorization.</p>
+        </div>
+        <div class="project-card">
+          <h3>Student Dashboard</h3>
+          <p>Helps students manage academic records, schedules, and performance with an intuitive visual interface.</p>
+        </div>
+      </div>
     </section>
   </div>
 </body>
