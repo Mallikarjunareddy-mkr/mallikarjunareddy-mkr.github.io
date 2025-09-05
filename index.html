@@ -9,246 +9,173 @@
 
   <style>
     :root {
-      --left-bg: #101828;
-      --right-bg: linear-gradient(135deg, #1e293b, #334155);
-      --text: #d1d5db;
+      --bg-dark: #0f172a;
+      --text-light: #e2e8f0;
       --accent: #3b82f6;
-      --light: #cbd5e1;
+      --muted: #94a3b8;
     }
 
     body {
       margin: 0;
+      padding: 0;
       font-family: 'Inter', sans-serif;
-      display: flex;
-      height: 100vh;
-      background: var(--right-bg);
-      color: var(--text);
-      overflow: hidden;
+      background: var(--bg-dark);
+      color: var(--text-light);
+      line-height: 1.6;
     }
 
-    /* Left Panel */
-    .left-panel {
-      width: 35%;
-      background-color: var(--left-bg);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 30px 20px;
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 40px 20px;
       text-align: center;
     }
 
     .profile-img {
-      width: 150px;
-      height: 150px;
+      width: 140px;
+      height: 140px;
       object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 8px 16px rgba(59, 130, 246, 0.4);
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(59, 130, 246, 0.4);
       margin-bottom: 20px;
     }
 
     .name {
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-bottom: 6px;
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 10px 0 5px;
     }
 
     .title {
+      font-size: 1.1rem;
+      color: var(--muted);
+      margin-bottom: 15px;
+    }
+
+    .tech-stack {
       font-size: 0.95rem;
-      color: var(--light);
-      margin-bottom: 25px;
-    }
-
-    .social-links {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      width: 100%;
-      max-width: 220px;
-    }
-
-    .social-links a {
-      text-decoration: none;
-      color: var(--accent);
-      border: 2px solid var(--accent);
-      padding: 8px 12px;
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      transition: 0.3s ease;
-    }
-
-    .social-links a:hover {
-      background-color: var(--accent);
-      color: var(--left-bg);
-    }
-
-    /* Right Panel */
-    .right-panel {
-      width: 65%;
-      padding: 50px;
-      overflow-y: auto;
-    }
-
-    .section {
-      margin-bottom: 40px;
-    }
-
-    .section h1 {
-      font-size: 1.6rem;
-      font-weight: 600;
-      margin-bottom: 10px;
-      border-bottom: 1px solid #475569;
-      padding-bottom: 6px;
-    }
-
-    .section p, .section li {
-      font-size: 1rem;
-      line-height: 1.7;
-      color: var(--light);
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 10px;
-      margin-top: 15px;
-    }
-
-    .skill {
-      background-color: #1e293b;
-      padding: 8px 12px;
-      border-radius: 6px;
-      text-align: center;
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: var(--text);
-      border: 1px solid #3b82f6;
-    }
-
-    .projects-list {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .projects-list li {
       margin-bottom: 20px;
     }
 
-    .projects-list strong {
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      font-size: 1.3rem;
+      margin-bottom: 40px;
+    }
+
+    .social-icons a {
       color: var(--accent);
+      text-decoration: none;
+      transition: 0.3s;
     }
 
-    .education-entry {
-      margin-bottom: 12px;
+    .social-icons a:hover {
+      color: #60a5fa;
     }
 
-    @media (max-width: 768px) {
-      body {
-        flex-direction: column;
-        height: auto;
-      }
+    section {
+      text-align: left;
+      margin-bottom: 50px;
+    }
 
-      .left-panel, .right-panel {
-        width: 100%;
-        padding: 20px;
-      }
+    section h2 {
+      font-size: 1.4rem;
+      color: var(--accent);
+      margin-bottom: 10px;
+      border-bottom: 1px solid #334155;
+      padding-bottom: 6px;
+    }
 
-      .social-links {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
+    section p, section li {
+      font-size: 1rem;
+      color: var(--text-light);
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .skills-list span {
+      background-color: #1e293b;
+      padding: 6px 12px;
+      border-radius: 5px;
+      font-size: 0.95rem;
+      border: 1px solid var(--accent);
+    }
+
+    ul {
+      padding-left: 18px;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 30px 15px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Left Panel -->
-  <div class="left-panel">
+  <div class="container">
+    <!-- Profile Section -->
     <img class="profile-img" src="https://mallikarjunareddy-mkr.github.io/personal/mkr1.jpg" alt="My Photo" />
     <div class="name">Malli Karjuna Reddy</div>
-    <div class="title">Full Stack Developer | B.Tech CSE</div>
+    <div class="title">Final Year B.Tech Student • Full Stack Developer</div>
+    <div class="tech-stack">ReactJS • Python • FastAPI • MongoDB • SQL</div>
 
-    <div class="social-links">
-      <a href="https://www.linkedin.com/in/mallikarjunareddy-g-245748223/" target="_blank">
-        <i class="fab fa-linkedin"></i> LinkedIn
-      </a>
-      <a href="https://github.com/Mallikarjunareddy-mkr" target="_blank">
-        <i class="fab fa-github"></i> GitHub
-      </a>
-      <a href="https://mallikarjunareddy-mkr.github.io/personal/malli-542.pdf" target="_blank">
-        <i class="fas fa-file-alt"></i> Resume
-      </a>
+    <!-- Social Icons -->
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/mallikarjunareddy-g-245748223/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/Mallikarjunareddy-mkr" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://mallikarjunareddy-mkr.github.io/personal/malli-542.pdf" target="_blank" title="Resume"><i class="fas fa-file-alt"></i></a>
     </div>
-  </div>
 
-  <!-- Right Panel -->
-  <div class="right-panel">
-    
-    <!-- Summary -->
-    <div class="section">
-      <h1>👋 About Me</h1>
+    <!-- About Section -->
+    <section>
+      <h2>About Me</h2>
       <p>
-        I'm a final-year B.Tech Computer Science student passionate about full-stack development.
-        I build scalable web applications using <strong>React</strong>, <strong>Python</strong>, <strong>FastAPI</strong>, and <strong>MongoDB</strong>.  
-        I love solving real-world problems and constantly improving my skills through hands-on projects and learning.
+        I'm a passionate final-year Computer Science student who enjoys building web applications that solve real-world problems. I focus on clean code, scalable systems, and constant learning. I'm currently exploring backend frameworks, DevOps basics, and cloud services to become job-ready as a full stack developer.
       </p>
-    </div>
+    </section>
 
-    <!-- Skills -->
-    <div class="section">
-      <h1>🛠️ Skills</h1>
-      <div class="skills-grid">
-        <div class="skill">Python</div>
-        <div class="skill">ReactJS</div>
-        <div class="skill">FastAPI</div>
-        <div class="skill">MongoDB</div>
-        <div class="skill">SQL</div>
-        <div class="skill">HTML</div>
-        <div class="skill">CSS</div>
-        <div class="skill">JavaScript</div>
-        <div class="skill">Git & GitHub</div>
+    <!-- Skills Section -->
+    <section>
+      <h2>Skills</h2>
+      <div class="skills-list">
+        <span>Python</span>
+        <span>ReactJS</span>
+        <span>FastAPI</span>
+        <span>MongoDB</span>
+        <span>SQL</span>
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>Git & GitHub</span>
       </div>
-    </div>
+    </section>
 
-    <!-- Projects -->
-    <div class="section">
-      <h1>💻 Projects</h1>
-      <ul class="projects-list">
-        <li>
-          <strong>Portfolio Website</strong> – Personal site to showcase my profile, skills and resume using HTML, CSS, and JavaScript.
-        </li>
-        <li>
-          <strong>Task Manager App</strong> – Built a full-stack app using React and FastAPI for users to manage daily tasks.
-        </li>
-        <li>
-          <strong>Student Result Dashboard</strong> – Web dashboard for displaying student performance using MongoDB and Python.
-        </li>
+    <!-- Projects Section -->
+    <section>
+      <h2>Projects</h2>
+      <ul>
+        <li><strong>Portfolio Website</strong> – A personal portfolio built with HTML, CSS, and JS to showcase my work and skills.</li>
+        <li><strong>Task Manager App</strong> – Full-stack React + FastAPI app to manage daily to-dos and track progress.</li>
+        <li><strong>Student Results Dashboard</strong> – A MongoDB + Python dashboard to view and analyze student performance.</li>
       </ul>
-    </div>
+    </section>
 
-    <!-- Education -->
-    <div class="section">
-      <h1>🎓 Education</h1>
-      <div class="education-entry">
-        <strong>B.Tech in Computer Science</strong><br>
-        Tadipatri Engineering College, 2022 – 2026
-      </div>
-      <div class="education-entry">
-        <strong>PUC (Intermediate)</strong><br>
-        Narayana Junior College, Anantapur – 2019 – 2021
-      </div>
-      <div class="education-entry">
-        <strong>SSC (10th)</strong><br>
-        Narayana E-Techno School, Tadipatri – 2018 – 2019
-      </div>
-    </div>
-
+    <!-- Education Section -->
+    <section>
+      <h2>Education</h2>
+      <p><strong>B.Tech in Computer Science</strong><br>Tadipatri Engineering College, 2022 – 2026</p>
+      <p><strong>PUC (Intermediate)</strong><br>Narayana Junior College, Anantapur (2019 – 2021)</p>
+      <p><strong>SSC (10th)</strong><br>Narayana E-Techno School, Tadipatri (2018 – 2019)</p>
+    </section>
   </div>
 
 </body>
