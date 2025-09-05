@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Malli Karjuna Reddy - Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
   <style>
@@ -13,6 +13,7 @@
       --right-bg: linear-gradient(135deg, #1e293b, #334155);
       --text: #d1d5db;
       --accent: #3b82f6;
+      --light: #cbd5e1;
     }
 
     body {
@@ -25,6 +26,7 @@
       overflow: hidden;
     }
 
+    /* Left Panel */
     .left-panel {
       width: 35%;
       background-color: var(--left-bg);
@@ -37,8 +39,8 @@
     }
 
     .profile-img {
-      width: 160px;
-      height: 160px;
+      width: 150px;
+      height: 150px;
       object-fit: cover;
       border-radius: 10px;
       box-shadow: 0 8px 16px rgba(59, 130, 246, 0.4);
@@ -48,12 +50,12 @@
     .name {
       font-size: 1.5rem;
       font-weight: 600;
-      margin-bottom: 5px;
+      margin-bottom: 6px;
     }
 
     .title {
       font-size: 0.95rem;
-      color: #94a3b8;
+      color: var(--light);
       margin-bottom: 25px;
     }
 
@@ -85,43 +87,64 @@
       color: var(--left-bg);
     }
 
+    /* Right Panel */
     .right-panel {
       width: 65%;
-      padding: 40px;
+      padding: 50px;
       overflow-y: auto;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
     }
 
-    .right-panel h1 {
-      font-size: 1.8rem;
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section h1 {
+      font-size: 1.6rem;
+      font-weight: 600;
       margin-bottom: 10px;
-    }
-
-    .right-panel h2 {
-      font-size: 1rem;
-      font-weight: 400;
-      line-height: 1.6;
-      margin-bottom: 30px;
-    }
-
-    .section-title {
-      font-size: 1.3rem;
-      margin-bottom: 15px;
       border-bottom: 1px solid #475569;
-      padding-bottom: 5px;
+      padding-bottom: 6px;
+    }
+
+    .section p, .section li {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--light);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .skill {
+      background-color: #1e293b;
+      padding: 8px 12px;
+      border-radius: 6px;
+      text-align: center;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text);
+      border: 1px solid #3b82f6;
+    }
+
+    .projects-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .projects-list li {
+      margin-bottom: 20px;
+    }
+
+    .projects-list strong {
+      color: var(--accent);
     }
 
     .education-entry {
-      font-size: 0.95rem;
-      margin-bottom: 15px;
-      line-height: 1.6;
-    }
-
-    .education-entry i {
-      color: var(--accent);
-      margin-right: 8px;
+      margin-bottom: 12px;
     }
 
     @media (max-width: 768px) {
@@ -140,14 +163,6 @@
         flex-wrap: wrap;
         justify-content: center;
       }
-
-      .right-panel h1 {
-        font-size: 1.5rem;
-      }
-
-      .right-panel h2 {
-        font-size: 0.95rem;
-      }
     }
   </style>
 </head>
@@ -157,7 +172,7 @@
   <div class="left-panel">
     <img class="profile-img" src="https://mallikarjunareddy-mkr.github.io/personal/mkr1.jpg" alt="My Photo" />
     <div class="name">Malli Karjuna Reddy</div>
-    <div class="title">Full Stack Developer • B.Tech CSE</div>
+    <div class="title">Full Stack Developer | B.Tech CSE</div>
 
     <div class="social-links">
       <a href="https://www.linkedin.com/in/mallikarjunareddy-g-245748223/" target="_blank">
@@ -174,28 +189,66 @@
 
   <!-- Right Panel -->
   <div class="right-panel">
-    <h1>Hello, I'm Malli 👋</h1>
-    <h2>
-      I'm a B.Tech student passionate about full stack development.<br>
-      I build responsive web apps using <strong>ReactJS</strong>, <strong>FastAPI</strong>, <strong>MongoDB</strong>, and <strong>Python</strong>.
-      I enjoy turning ideas into functional projects and constantly learning new technologies.
-    </h2>
+    
+    <!-- Summary -->
+    <div class="section">
+      <h1>👋 About Me</h1>
+      <p>
+        I'm a final-year B.Tech Computer Science student passionate about full-stack development.
+        I build scalable web applications using <strong>React</strong>, <strong>Python</strong>, <strong>FastAPI</strong>, and <strong>MongoDB</strong>.  
+        I love solving real-world problems and constantly improving my skills through hands-on projects and learning.
+      </p>
+    </div>
 
-    <div>
-      <div class="section-title">🎓 Education</div>
-      <div class="education-entry">
-        <i class="fas fa-university"></i>
-        B.Tech in Computer Science, Tadipatri Engineering College (2022 – 2026)
-      </div>
-      <div class="education-entry">
-        <i class="fas fa-book"></i>
-        PUC, Narayana Junior College, Anantapur (2019 – 2021)
-      </div>
-      <div class="education-entry">
-        <i class="fas fa-school"></i>
-        SSC, Narayana E-Techno School, Tadipatri (2018 – 2019)
+    <!-- Skills -->
+    <div class="section">
+      <h1>🛠️ Skills</h1>
+      <div class="skills-grid">
+        <div class="skill">Python</div>
+        <div class="skill">ReactJS</div>
+        <div class="skill">FastAPI</div>
+        <div class="skill">MongoDB</div>
+        <div class="skill">SQL</div>
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">Git & GitHub</div>
       </div>
     </div>
+
+    <!-- Projects -->
+    <div class="section">
+      <h1>💻 Projects</h1>
+      <ul class="projects-list">
+        <li>
+          <strong>Portfolio Website</strong> – Personal site to showcase my profile, skills and resume using HTML, CSS, and JavaScript.
+        </li>
+        <li>
+          <strong>Task Manager App</strong> – Built a full-stack app using React and FastAPI for users to manage daily tasks.
+        </li>
+        <li>
+          <strong>Student Result Dashboard</strong> – Web dashboard for displaying student performance using MongoDB and Python.
+        </li>
+      </ul>
+    </div>
+
+    <!-- Education -->
+    <div class="section">
+      <h1>🎓 Education</h1>
+      <div class="education-entry">
+        <strong>B.Tech in Computer Science</strong><br>
+        Tadipatri Engineering College, 2022 – 2026
+      </div>
+      <div class="education-entry">
+        <strong>PUC (Intermediate)</strong><br>
+        Narayana Junior College, Anantapur – 2019 – 2021
+      </div>
+      <div class="education-entry">
+        <strong>SSC (10th)</strong><br>
+        Narayana E-Techno School, Tadipatri – 2018 – 2019
+      </div>
+    </div>
+
   </div>
 
 </body>
