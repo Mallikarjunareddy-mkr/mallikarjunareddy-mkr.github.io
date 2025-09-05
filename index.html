@@ -31,15 +31,45 @@
       width: 35%;
       background-color: var(--left-bg);
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
       padding: 20px;
     }
 
     .left-panel img {
-      width: 80%;
+      width: 220px;
+      height: 280px;
+      object-fit: cover;
       border-radius: 8px;
       box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+      margin-bottom: 20px;
+    }
+
+    .social-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+      max-width: 220px;
+    }
+
+    .social-links a {
+      text-decoration: none;
+      color: var(--accent);
+      border: 2px solid var(--accent);
+      padding: 8px 12px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background 0.3s ease, color 0.3s ease;
+      font-weight: 600;
+    }
+
+    .social-links a:hover {
+      background: var(--accent);
+      color: #101828;
     }
 
     .right-panel {
@@ -67,60 +97,6 @@
       line-height: 1.6;
     }
 
-    .social-links {
-      margin: 20px 0;
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .social-links a {
-      text-decoration: none;
-      color: var(--accent);
-      border: 2px solid var(--accent);
-      padding: 8px 14px;
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: all 0.3s ease;
-      font-weight: 600;
-    }
-
-    .social-links a:hover {
-      background: var(--accent);
-      color: #101828;
-    }
-
-    .more-btn {
-      padding: 8px 16px;
-      border: 2px solid var(--accent);
-      background: transparent;
-      color: var(--accent);
-      font-weight: 600;
-      border-radius: 6px;
-      cursor: pointer;
-      width: fit-content;
-      transition: background 0.3s ease, color 0.3s ease;
-      margin-top: 10px;
-    }
-
-    .more-btn:hover {
-      background: var(--accent);
-      color: var(--left-bg);
-    }
-
-    .about-section {
-      margin-top: 20px;
-      display: none;
-      animation: fadeIn 0.4s ease forwards;
-    }
-
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(10px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-
     @media (max-width: 768px) {
       body {
         flex-direction: column;
@@ -130,6 +106,14 @@
       .left-panel, .right-panel {
         width: 100%;
         padding: 20px;
+        align-items: center;
+        text-align: center;
+      }
+
+      .social-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
       }
 
       h1 {
@@ -140,57 +124,14 @@
 </head>
 <body>
 
+  <!-- LEFT PANEL -->
   <div class="left-panel">
     <img src="https://mallikarjunareddy-mkr.github.io/personal/mkr1.jpg" alt="My Photo" />
-  </div>
-
-  <div class="right-panel">
-    <h1>Hi, I'm Malli Karjuna Reddy</h1>
-    <h2>
-      I’m a BTech student learning full stack web development. <br>
-      I know Python, ReactJS, FastAPI, MongoDB, and SQL basics. <br>
-      I like building small projects and improving my coding skills every day.
-    </h2>
 
     <!-- Social Media Buttons -->
     <div class="social-links">
-      <a href="https://www.linkedin.com/in/mallikarjunareddy-g-245748223/">
+      <a href="https://www.linkedin.com/in/mallikarjunareddy-g-245748223/" target="_blank">
         <i class="fab fa-linkedin"></i> LinkedIn
       </a>
-      <a href="https://github.com/Mallikarjunareddy-mkr">
-        <i class="fab fa-github"></i> GitHub
-      </a>
-      <a href="https://mallikarjunareddy-mkr.github.io/personal/malli-542.pdf">
-        <i class="fas fa-file-alt"></i> Resume
-      </a>
-      <a onclick="toggleAbout()">More</a>
-    </div>
-
-
-    <div class="about-section" id="aboutSection">
-      <h1>About Me</h1>
-      <h2>EDUCATION</h2>
-      <h3>
-        B.Tech in Computer Science (2022 – 2026), Tadipatri Engineering College, Tadipatri, India<br><br>
-        PUC (2019 - 2021), Narayana Junior College, Anantapur, India<br><br>
-        10th (2018 - 2019), Narayana E-Techno School, Tadipatri, India
-      </h3>
-    </div>
-  </div>
-
-  <script>
-    function toggleAbout() {
-      const about = document.getElementById('aboutSection');
-      const btn = document.querySelector('.more-btn');
-      if (about.style.display === 'block') {
-        about.style.display = 'none';
-        btn.textContent = 'More';
-      } else {
-        about.style.display = 'block';
-        btn.textContent = 'Less';
-      }
-    }
-  </script>
-
-</body>
-</html>
+      <a href="https://github.com/Mallikarjunareddy-mkr" target="_blank">
+        <i class="fab fa-github"></i>
