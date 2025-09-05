@@ -1,111 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Malli Karjuna Reddy - Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  <style>
-    body {
-      margin: 0;
-      padding: 40px 20px;
-      font-family: 'Inter', sans-serif;
-      background: #0f172a;
-      color: #e2e8f0;
-    }
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .profile {
-      display: flex;
-      align-items: center;
-      gap: 40px;
-      flex-wrap: wrap;
-      margin-bottom: 60px;
-    }
-    .profile img {
-      width: 220px;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 16px;
-      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3);
-    }
-    .info h1 {
-      font-size: 2.5rem;
-      margin: 0 0 20px;
-      letter-spacing: 0.8px;
-    }
-    .info .about-text {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: #94a3b8;
-      max-width: 600px;
-    }
-    .links {
-      margin-top: 24px;
-      font-size: 1.6rem;
-      display: flex;
-      gap: 20px;
-    }
-    .links a {
-      color: #3b82f6;
-      text-decoration: none;
-    }
-    .links a:hover {
-      color: #60a5fa;
-    }
-    section {
-      background: #1e293b;
-      border-radius: 10px;
-      padding: 25px 30px;
-      margin-bottom: 40px;
-    }
-    section h2 {
-      font-size: 1.6rem;
-      color: #3b82f6;
-      margin-bottom: 16px;
-      letter-spacing: 1px;
-    }
-    section p, section li {
-      font-size: 1.05rem;
-      line-height: 1.8;
-      letter-spacing: 0.3px;
-      margin: 6px 0;
-    }
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .skills span {
-      background: #334155;
-      border: 1px solid #3b82f6;
-      border-radius: 6px;
-      padding: 8px 14px;
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-
-    @media (max-width: 768px) {
-      .profile {
-        flex-direction: column;
-        text-align: center;
-      }
-      .profile img {
-        margin-bottom: 20px;
-      }
-      .info .about-text {
-        max-width: 100%;
-      }
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Malli Karjuna Reddy - Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<style>
+  body {
+    margin: 0; padding: 40px 20px;
+    font-family: 'Inter', sans-serif;
+    background: #0f172a; color: #e2e8f0;
+  }
+  .container {
+    max-width: 1000px; margin: 0 auto;
+  }
+  .profile {
+    display: flex; align-items: center; gap: 40px; flex-wrap: wrap; margin-bottom: 60px;
+  }
+  .profile img {
+    width: 220px; height: 220px; object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(59,130,246,0.3);
+  }
+  .info h1 {
+    font-size: 2.5rem; margin: 0 0 20px; letter-spacing: 0.8px;
+  }
+  .about-text {
+    font-size: 1.1rem; line-height: 1.6;
+    color: #94a3b8; max-width: 600px;
+  }
+  .links {
+    margin-top: 24px; font-size: 1.6rem;
+    display: flex; gap: 20px;
+  }
+  .links a {
+    color: #3b82f6; text-decoration: none;
+  }
+  .links a:hover {
+    color: #60a5fa;
+  }
+  section {
+    background: #1e293b;
+    border-radius: 10px; padding: 25px 30px; margin-bottom: 40px;
+  }
+  section h2 {
+    font-size: 1.6rem; color: #3b82f6; margin-bottom: 16px; letter-spacing: 1px;
+  }
+  section p, section li {
+    font-size: 1.05rem; line-height: 1.8; letter-spacing: 0.3px; margin: 6px 0;
+  }
+  .skills {
+    display: flex; flex-wrap: wrap; gap: 12px;
+  }
+  .skills span {
+    background: #334155; border: 1px solid #3b82f6;
+    border-radius: 6px; padding: 8px 14px;
+    font-weight: 600; font-size: 0.95rem;
+  }
+  @media (max-width: 768px) {
+    .profile { flex-direction: column; text-align: center; }
+    .profile img { margin-bottom: 20px; }
+    .about-text { max-width: 100%; }
+  }
+</style>
 </head>
 <body>
   <div class="container">
-    
-    <!-- Profile with About -->
     <div class="profile">
       <img src="https://mallikarjunareddy-mkr.github.io/personal/mkr1.jpg" alt="Malli Karjuna Reddy" />
       <div class="info">
@@ -114,14 +75,13 @@
           I’m a full stack developer focused on building modern, scalable web applications using ReactJS, Python, FastAPI, and MongoDB. I enjoy writing clean code, building intuitive user interfaces, and solving real-world problems with technology.
         </p>
         <div class="links">
-          <a href="https://www.linkedin.com/in/mallikarjunareddy-g-245748223/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://linkedin.com/in/mallikarjunareddy-g-245748223/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
           <a href="https://github.com/Mallikarjunareddy-mkr" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
           <a href="https://mallikarjunareddy-mkr.github.io/personal/malli-542.pdf" target="_blank" aria-label="Resume"><i class="fas fa-file-alt"></i></a>
         </div>
       </div>
     </div>
 
-    <!-- Skills -->
     <section>
       <h2>Skills</h2>
       <div class="skills">
@@ -130,7 +90,6 @@
       </div>
     </section>
 
-    <!-- Projects -->
     <section>
       <h2>Projects</h2>
       <ul>
@@ -139,7 +98,6 @@
         <li><strong>Student Dashboard</strong> – Built to help students manage academic records, schedules, and performance visually.</li>
       </ul>
     </section>
-
   </div>
 </body>
 </html>
