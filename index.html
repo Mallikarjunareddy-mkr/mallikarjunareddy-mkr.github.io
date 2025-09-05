@@ -5,10 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>My Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
-
-  <!-- Font Awesome for icons -->
+  <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
   <style>
     :root {
       --left-bg: #101828;
@@ -37,44 +35,44 @@
     }
 
     .left-panel img {
-      width: 220px;
-      height: 280px;
+      width: 200px;
+      height: 200px;
       object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+      border-radius: 10px;
       margin-bottom: 20px;
+      box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
     }
 
-    .social-links {
+    .social-links-left {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 10px;
       width: 100%;
       max-width: 220px;
     }
 
-    .social-links a {
+    .social-links-left a {
       text-decoration: none;
       color: var(--accent);
       border: 2px solid var(--accent);
-      padding: 8px 12px;
+      padding: 10px;
       border-radius: 6px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 8px;
-      transition: background 0.3s ease, color 0.3s ease;
+      gap: 10px;
+      transition: all 0.3s ease;
       font-weight: 600;
+      justify-content: center;
     }
 
-    .social-links a:hover {
+    .social-links-left a:hover {
       background: var(--accent);
       color: #101828;
     }
 
     .right-panel {
       width: 65%;
-      padding: 30px;
+      padding: 40px;
       overflow-y: auto;
       display: flex;
       flex-direction: column;
@@ -90,11 +88,16 @@
     h2 {
       font-size: 1.3rem;
       font-weight: 500;
+      margin-bottom: 20px;
     }
 
     h3 {
       font-weight: 400;
       line-height: 1.6;
+    }
+
+    .about-section {
+      margin-top: 20px;
     }
 
     @media (max-width: 768px) {
@@ -106,32 +109,61 @@
       .left-panel, .right-panel {
         width: 100%;
         padding: 20px;
-        align-items: center;
-        text-align: center;
       }
 
-      .social-links {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
+      .left-panel {
+        align-items: center;
       }
 
       h1 {
         font-size: 2rem;
+      }
+
+      .social-links-left {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- LEFT PANEL -->
+  <!-- Left Panel with Profile and Links -->
   <div class="left-panel">
     <img src="https://mallikarjunareddy-mkr.github.io/personal/mkr1.jpg" alt="My Photo" />
-
-    <!-- Social Media Buttons -->
-    <div class="social-links">
+    <div class="social-links-left">
       <a href="https://www.linkedin.com/in/mallikarjunareddy-g-245748223/" target="_blank">
         <i class="fab fa-linkedin"></i> LinkedIn
       </a>
       <a href="https://github.com/Mallikarjunareddy-mkr" target="_blank">
-        <i class="fab fa-github"></i>
+        <i class="fab fa-github"></i> GitHub
+      </a>
+      <a href="https://mallikarjunareddy-mkr.github.io/personal/malli-542.pdf" target="_blank">
+        <i class="fas fa-file-alt"></i> Resume
+      </a>
+    </div>
+  </div>
+
+  <!-- Right Panel with Intro and About -->
+  <div class="right-panel">
+    <h1>Hi, I'm Malli Karjuna Reddy</h1>
+    <h2>
+      I’m a BTech student learning full stack web development.<br>
+      I know Python, ReactJS, FastAPI, MongoDB, and SQL basics.<br>
+      I like building small projects and improving my coding skills every day.
+    </h2>
+
+    <div class="about-section">
+      <h1>About Me</h1>
+      <h2>EDUCATION</h2>
+      <h3>
+        B.Tech in Computer Science (2022 – 2026), Tadipatri Engineering College, Tadipatri, India<br><br>
+        PUC (2019 - 2021), Narayana Junior College, Anantapur, India<br><br>
+        10th (2018 - 2019), Narayana E-Techno School, Tadipatri, India
+      </h3>
+    </div>
+  </div>
+
+</body>
+</html>
