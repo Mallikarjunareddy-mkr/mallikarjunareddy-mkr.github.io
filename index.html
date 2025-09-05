@@ -2,121 +2,154 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Your Name | Full Stack Developer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
   <style>
-  :root {
-  --bg: linear-gradient(to right, #e0f2f1, #e8eaf6); /* Teal to lavender */
-  --text: #1f2937;   /* Rich dark gray */
-  --accent: #3b82f6; /* Soft vibrant blue */
-}
+    :root {
+      --left-bg: #101828;
+      --right-bg: linear-gradient(135deg, #1e293b, #334155);
+      --text: #d1d5db;
+      --accent: #3b82f6;
+    }
 
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
-  transition: background 0.4s ease;
-}
-
-
-    .home-section {
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
       display: flex;
-      flex-direction: row;
-      align-items: center;
+      height: 100vh;
+      background: var(--right-bg);
+      color: var(--text);
+      overflow: hidden;
+    }
+
+    .left-panel {
+      width: 35%;
+      background-color: var(--left-bg);
+      display: flex;
       justify-content: center;
-      min-height: 100vh;
-      padding: 2rem;
-      gap: 3rem;
-      flex-wrap: wrap;
+      align-items: center;
+      padding: 20px;
     }
 
-    .profile-pic {
-      flex: 1;
-      max-width: 300px;
+    .left-panel img {
+      width: 80%;
+      border-radius: 8px;
+      box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
     }
 
-    .profile-pic img {
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    .right-panel {
+      width: 65%;
+      padding: 30px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
-    .profile-info {
-      flex: 2;
-      max-width: 600px;
+    h1 {
+      margin-top: 0;
+      font-size: 2.4rem;
+      margin-bottom: 15px;
     }
 
-    .profile-info h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .profile-info p {
+    p {
       font-size: 1.1rem;
-      margin-bottom: 1rem;
-      line-height: 1.6;
+      line-height: 1.5;
+      margin-bottom: 15px;
     }
 
-    .links {
-      margin-top: 1.5rem;
-    }
-
-    .links a {
-      text-decoration: none;
+    .more-btn {
+      padding: 8px 16px;
+      border: 2px solid var(--accent);
+      background: transparent;
       color: var(--accent);
-      font-weight: bold;
-      margin-right: 1.5rem;
-      border-bottom: 2px solid transparent;
-      transition: border-color 0.3s;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      width: fit-content;
+      transition: background 0.3s ease, color 0.3s ease;
+      margin-top: 10px;
     }
 
-    .links a:hover {
-      border-color: var(--accent);
+    .more-btn:hover {
+      background: var(--accent);
+      color: var(--left-bg);
     }
 
+    .about-section {
+      margin-top: 20px;
+      display: none;
+      animation: fadeIn 0.4s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(10px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    /* Responsive */
     @media (max-width: 768px) {
-      .home-section {
+      body {
         flex-direction: column;
-        text-align: center;
+        height: auto;
       }
 
-      .profile-info h1 {
+      .left-panel, .right-panel {
+        width: 100%;
+        padding: 20px;
+      }
+
+      h1 {
         font-size: 2rem;
-      }
-
-      .links a {
-        display: inline-block;
-        margin: 0.5rem 0.75rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <section class="home-section">
-    <!-- Profile Image -->
-    <div class="profile-pic">
-      <img src="https://via.placeholder.com/300x400.png?text=Your+Photo" alt="Profile Photo" />
-    </div>
+  <div class="left-panel">
+    <img src="https://via.placeholder.com/300x400?text=My+Photo" alt="My Photo" />
+  </div>
 
-    <!-- Profile Info -->
-    <div class="profile-info">
-      <h1>Your Name</h1>
-      <p>Full Stack Developer skilled in Python, FastAPI, ReactJS, MongoDB, and SQL. I enjoy building scalable web applications with clean architecture and responsive design.</p>
-      <p>I focus on performance, simplicity, and automation while delivering meaningful digital solutions.</p>
+  <div class="right-panel">
+    <h1>Hi, I'm [Your Name]</h1>
+    <p>
+      I’m a BTech student learning full stack web development. I know Python, ReactJS, FastAPI, MongoDB, and SQL basics.
+    </p>
+    <p>
+      I like building small projects and improving my coding skills every day.
+    </p>
 
-      <!-- Links -->
-      <div class="links">
-        <a href="https://linkedin.com/in/yourname" target="_blank">LinkedIn</a>
-        <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-        <a href="/resume.pdf" target="_blank">Resume</a>
-        <a href="#about">About</a>
-      </div>
+    <button class="more-btn" onclick="toggleAbout()">More</button>
+
+    <div class="about-section" id="aboutSection">
+      <h2>About Me</h2>
+      <p>
+        Currently, I’m studying Computer Science and working on projects related to web development. I want to become a better developer by practicing backend and frontend coding.
+      </p>
+      <p>
+        I have experience working with React for frontend and FastAPI for backend APIs. I also use MongoDB for databases.
+      </p>
+      <p>
+        In free time, I watch tutorials, try new coding challenges, and sometimes contribute to open source.
+      </p>
     </div>
-  </section>
+  </div>
+
+  <script>
+    function toggleAbout() {
+      const about = document.getElementById('aboutSection');
+      const btn = document.querySelector('.more-btn');
+      if (about.style.display === 'block') {
+        about.style.display = 'none';
+        btn.textContent = 'More';
+      } else {
+        about.style.display = 'block';
+        btn.textContent = 'Less';
+      }
+    }
+  </script>
 
 </body>
 </html>
