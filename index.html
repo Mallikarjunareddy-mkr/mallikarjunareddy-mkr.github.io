@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>My Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome for icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
   <style>
     :root {
       --left-bg: #101828;
@@ -53,10 +57,39 @@
       margin-bottom: 15px;
     }
 
-    p {
-      font-size: 1.1rem;
-      line-height: 1.5;
-      margin-bottom: 15px;
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 500;
+    }
+
+    h3 {
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    .social-links {
+      margin: 20px 0;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .social-links a {
+      text-decoration: none;
+      color: var(--accent);
+      border: 2px solid var(--accent);
+      padding: 8px 14px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+      font-weight: 600;
+    }
+
+    .social-links a:hover {
+      background: var(--accent);
+      color: #101828;
     }
 
     .more-btn {
@@ -88,7 +121,6 @@
       to {opacity: 1; transform: translateY(0);}
     }
 
-    /* Responsive */
     @media (max-width: 768px) {
       body {
         flex-direction: column;
@@ -114,22 +146,35 @@
 
   <div class="right-panel">
     <h1>Hi, I'm Malli Karjuna Reddy</h1>
-     <h2> I’m a BTech student learning full stack web development. <br>
-       I know Python, ReactJS, FastAPI, MongoDB, and SQL basics. <br>
-      I like building small projects and improving my coding skills every day.<br></h2>
+    <h2>
+      I’m a BTech student learning full stack web development. <br>
+      I know Python, ReactJS, FastAPI, MongoDB, and SQL basics. <br>
+      I like building small projects and improving my coding skills every day.
+    </h2>
+
+    <!-- Social Media Buttons -->
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/mallikarjunareddy-g-245748223/">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+      <a href="https://github.com/Mallikarjunareddy-mkr">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+      <a href="/D:\MALLI\malli-542.pdf">
+        <i class="fas fa-file-alt"></i> Resume
+      </a>
+    </div>
 
     <button class="more-btn" onclick="toggleAbout()">More</button>
 
     <div class="about-section" id="aboutSection">
       <h1>About Me</h1>
       <h2>EDUCATION</h2>
-     <h3>B.Tech in Computer Science	(2022 – 2026), Tadipatri engineering college	Tadipatri, India<br>
-     
-     PUC (2019 - 2021), Narayana Junior College	Anantapur, India<br>
-     
-     10th (2018 - 2019), Narayana E-Techno School	Tadipatri, India<br> </h3>
-
-      </pre>
+      <h3>
+        B.Tech in Computer Science (2022 – 2026), Tadipatri Engineering College, Tadipatri, India<br><br>
+        PUC (2019 - 2021), Narayana Junior College, Anantapur, India<br><br>
+        10th (2018 - 2019), Narayana E-Techno School, Tadipatri, India
+      </h3>
     </div>
   </div>
 
