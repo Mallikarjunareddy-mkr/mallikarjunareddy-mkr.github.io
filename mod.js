@@ -1,5 +1,17 @@
 (function(global) {
-  // Helper to set attributes, styles, and text
+  // 1️⃣ body() - write static HTML
+  function body(htmlString) {
+    document.body.insertAdjacentHTML("beforeend", htmlString);
+  }
+
+  // 2️⃣ css() - write static CSS
+  function css(cssString) {
+    const style = document.createElement("style");
+    style.textContent = cssString;
+    document.head.appendChild(style);
+  }
+
+  // 3️⃣ Mini JS Helper Functions
   function setAttrs(el, attrs) {
     if (!attrs) return;
     for (let key in attrs) {
@@ -18,16 +30,13 @@
     }
   }
 
-  // Helper to create element from "<tag ...>" string
   function createFromTagString(tagString, attrs) {
     const tagMatch = tagString.match(/^<(\w+)(.*?)>$/);
     if (!tagMatch) return null;
-
     const tag = tagMatch[1];
-    const attrString = tagMatch[2]; // like ' id="demo" class="box"'
+    const attrString = tagMatch[2];
     const el = document.createElement(tag);
 
-    // Parse inline attributes
     if (attrString) {
       const regex = /(\w+)=["'](.*?)["']/g;
       let m;
@@ -36,17 +45,10 @@
       }
     }
 
-    // Set additional attributes from second argument
     setAttrs(el, attrs);
     return el;
   }
 
-  // Main() - write raw HTML into body
-  function Main(htmlString) {
-    document.body.insertAdjacentHTML("beforeend", htmlString);
-  }
-
-  // $() - select existing or create element dynamically
   function MiniStruct(selectorOrTag, attrs) {
     if (/^</.test(selectorOrTag)) {
       const el = createFromTagString(selectorOrTag, attrs);
@@ -54,20 +56,17 @@
       return el;
     }
 
-    // Select existing element
     const el = document.querySelector(selectorOrTag);
     if (el) setAttrs(el, attrs);
     return el;
   }
 
-  // Add multiple events
   Element.prototype.Addevent = function(events) {
     for (let evt in events) {
       this.addEventListener(evt, events[evt]);
     }
   };
 
-  // Add children using "<div id='...'>" style
   Element.prototype.Child = function(children) {
     if (Array.isArray(children)) {
       children.forEach(c => this.Child(c));
@@ -80,8 +79,8 @@
     return childEl;
   };
 
-  // Expose Main() and $()
-  global.Main = Main;
+  global.body = body;
+  global.css = css;
   global.$ = MiniStruct;
 
 })(window);
