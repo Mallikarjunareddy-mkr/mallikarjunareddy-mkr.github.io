@@ -1,96 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>MiniJS To-Do</title>
+<meta charset="UTF-8">
+<title>College Website</title>
+<style>
+  body{margin:0;font-family:Arial,sans-serif;background:#f5f5f5;}
+  header{display:flex;justify-content:space-between;align-items:center;padding:10px 20px;background:#004080;color:white;position:relative;}
+  #menuBtn{cursor:pointer;padding:5px 10px;background:#0066cc;border:none;border-radius:4px;}
+  #dropdown{display:none;position:absolute;top:50px;right:20px;background:white;color:black;border:1px solid #ccc;border-radius:4px;box-shadow:0 2px 5px rgba(0,0,0,0.2);}
+  #dropdown div{padding:8px 12px;cursor:pointer;}
+  #dropdown div:hover{background:#eee;}
+  #content{padding:20px;}
+  .card{background:white;padding:15px;margin:10px;border-radius:6px;cursor:pointer;box-shadow:0 1px 3px rgba(0,0,0,0.2);}
+  .done{opacity:0.5;text-decoration:line-through;}
+  #gallery img{width:200px;height:150px;margin:5px;border-radius:6px;object-fit:cover;cursor:pointer;}
+  button{cursor:pointer;}
+</style>
 </head>
 <body>
 
-  <!-- MiniJS Module -->
-  <script src="mod.js"></script>
+<header>
+  <div id="title">My College</div>
+  <button id="menuBtn">Menu</button>
+  <div id="dropdown">
+    <div>Home</div>
+    <div>Departments</div>
+    <div>Gallery</div>
+    <div>Contact</div>
+  </div>
+</header>
 
-  <!-- Your website script -->
-  <script>
-    // 1️⃣ Static HTML
-    body(`
-      <header>My To-Do List</header>
-      <div id="app"></div>
-      <footer>© 2025 MiniJS Demo</footer>
-    `);
+<div id="content">
+  <h2>Departments</h2>
+  <div id="departmentCards"></div>
 
-    // 2️⃣ Static CSS
-    css(`
-      body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f4f4f4; }
-      header, footer { background:#333; color:white; padding:15px; text-align:center; }
-      #app { padding:20px; }
-      .task { 
-        background:white; 
-        margin:10px 0; 
-        padding:10px; 
-        border-radius:5px; 
-        cursor:pointer; 
-        transition:0.2s; 
-      }
-      .task.completed { text-decoration: line-through; color:gray; opacity:0.6; }
-      #addBtn {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background: #007BFF;
-        color: white;
-        font-size: 30px;
-        border: none;
-        cursor: pointer;
-      }
-      input#taskInput {
-        width: calc(100% - 20px);
-        padding: 10px;
-        font-size: 16px;
-        margin-bottom: 10px;
-      }
-      button#addTaskBtn {
-        padding: 10px 15px;
-        background: #28a745;
-        color: white;
-        border: none;
-        cursor: pointer;
-        border-radius: 5px;
-      }
-    `);
+  <h2>Gallery</h2>
+  <div id="gallery"></div>
 
-    // 3️⃣ Dynamic JS
-    $("<button id='addBtn'>+</button>");
+  <button id="saveBtn">Save Changes</button>
+</div>
 
-    $("#addBtn").Addevent({
-      click: () => {
-        if (!$("#taskInput")) {
-          $("#app").Child([
-            "<input id='taskInput' placeholder='Enter task'>",
-            "<button id='addTaskBtn'>Add Task</button>"
-          ]);
+<script src="mod.js"></script>
+<script>
+  // ------------------ Header dropdown
+  Mini.Dropdown("#menuBtn","#dropdown");
+  $("#dropdown div").on("click", e=>Mini.Alert(`You clicked ${e.target.textContent}`));
 
-          $("#addTaskBtn").Addevent({
-            click: () => {
-              const taskValue = $("#taskInput").value.trim();
-              if (!taskValue) return;
+  // ------------------ Departments cards
+  const departments = ["Computer Science","Mathematics","Physics","Chemistry"];
+  departments.forEach(dep=>Mini.Card("#departmentCards",dep));
 
-              $("#app").Child(`<div class="task">${taskValue}</div>`);
-              $("#taskInput").value = "";
+  // ------------------ Gallery
+  const images = [
+    "https://picsum.photos/id/1015/400/300",
+    "https://picsum.photos/id/1016/400/300",
+    "https://picsum.photos/id/1018/400/300"
+  ];
+  Mini.Gallery("#gallery",images);
 
-              const tasks = document.querySelectorAll(".task");
-              tasks[tasks.length - 1].Addevent({
-                click: function() {
-                  this.classList.toggle("completed");
-                }
-              });
-            }
-          });
-        }
-      }
-    });
-  </script>
+  // ------------------ Save button alert
+  $("#saveBtn").on("click",()=>Mini.Alert("Changes saved!"));
+
+  // ------------------ Reactive title example
+  const obj={collegeName:"My College"};
+  Mini.Bind("#title",obj,"collegeName");
+  setTimeout(()=>{ obj.collegeName="Super College"; },3000); // updates automatically
+</script>
 </body>
 </html>
