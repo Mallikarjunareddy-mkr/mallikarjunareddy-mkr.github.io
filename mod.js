@@ -38,17 +38,21 @@
       return this;
     }
 
-    Modal({title,content}){
+    Modal({title,content,width="500px"}){
       const overlay=document.createElement("div"); overlay.className="modal-overlay";
-      const box=document.createElement("div"); box.className="modal-box";
+      const box=document.createElement("div"); box.className="modal-box"; box.style.maxWidth=width;
       box.innerHTML=`<h3>${$Util.escapeHTML(title)}</h3>${content}<button class='closeBtn'>Close</button>`;
       overlay.appendChild(box); document.body.appendChild(overlay);
       overlay.querySelector(".closeBtn").addEventListener("click",()=>overlay.remove());
+      overlay.addEventListener("click",e=>{if(e.target===overlay) overlay.remove();});
+      document.addEventListener("keydown",function escListener(e){if(e.key==="Escape"){overlay.remove();document.removeEventListener("keydown",escListener);}});
       return this;
     }
 
-    Card(text){
-      const card=document.createElement("div"); card.className="card"; card.textContent=text;
+    Card({title,content,click}){
+      const card=document.createElement("div"); card.className="card";
+      card.innerHTML=`<h3>${$Util.escapeHTML(title)}</h3><p>${$Util.escapeHTML(content)}</p>`;
+      if(click) card.addEventListener("click",click);
       this.Child(card); return $(card);
     }
 
@@ -63,15 +67,11 @@
       return this;
     }
 
-    Alert(msg,type="info"){
-      const el=document.createElement("div"); el.textContent=msg;
-      el.style.position="fixed"; el.style.bottom="10px"; el.style.left="10px";
-      el.style.padding="10px"; el.style.background=type==="success"?"green":type==="error"?"red":"orange";
-      el.style.color="white"; el.style.borderRadius="4px";
-      document.body.appendChild(el); setTimeout(()=>el.remove(),2000); return this;
+    Alert(msg,type="info",duration=2000){
+      const el=document.createElement("div"); el.textContent=msg; el.className="alert "+type;
+      document.body.appendChild(el); setTimeout(()=>el.remove(),duration); return this;
     }
 
-    // ---------------- Extra Utilities ----------------
     Animate(props,duration=300,easing="linear",callback=null){
       const easingFuncs={linear:t=>t,easeIn:t=>t*t,easeOut:t=>t*(2-t),easeInOut:t=>t<0.5?2*t*t:-1+(4-2*t)*t};
       this.elements.forEach(el=>{
