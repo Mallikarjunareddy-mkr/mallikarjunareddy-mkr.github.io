@@ -26,35 +26,50 @@
 <section class="gallery" id="gallerySection"></section>
 
 <script>
-  // ---------- Dropdown ----------
+  // ---------- Dropdown Menu ----------
   $("#menuBtn").Dropdown("#dropdown");
 
   // ---------- Cards Section ----------
-  const cards = [
+  const cardsData = [
     {title:"Admissions Open", content:"Enroll for 2025-26 courses now."},
     {title:"Upcoming Events", content:"Check out the latest events in our college."},
     {title:"Sports Meet", content:"Participate in annual sports competitions."},
     {title:"Science Expo", content:"Explore projects from our students."}
   ];
-  cards.forEach(c=>{
+  cardsData.forEach(c=>{
     $("#cardsSection").Card({title:c.title, content:c.content});
   });
 
   // ---------- Gallery Section ----------
-  const images = [
+  const galleryImages = [
     "https://picsum.photos/id/1015/400/300",
     "https://picsum.photos/id/1016/400/300",
     "https://picsum.photos/id/1018/400/300",
     "https://picsum.photos/id/1020/400/300"
   ];
-  $("#gallerySection").Gallery(images);
+  $("#gallerySection").Gallery(galleryImages);
 
-  // ---------- Alerts ----------
+  // ---------- Welcome Alert ----------
   setTimeout(()=>$().Alert("Welcome to My College Pro!","success"),1000);
 
-  // ---------- Search bar ----------
+  // ---------- Search Bar ----------
   $(".search-bar input").on("keypress",function(e){
     if(e.key==="Enter") $().Alert("Searching: "+this.value,"success");
+  });
+
+  // ---------- Dynamic Card Example ----------
+  const addCardBtn = $("<button>", {id:"addCardBtn", style:"margin:20px;padding:10px 20px;background:#1a73e8;color:white;border:none;border-radius:8px;cursor:pointer;"})
+    .Text("Add New Card");
+  $("body").Child(addCardBtn);
+
+  let counter=1;
+  $("#addCardBtn").on("click",()=>{
+    $("#cardsSection").Card({
+      title:"Dynamic Card "+counter,
+      content:"This card was added dynamically.",
+      click:()=> $().Alert("You clicked card "+counter,"success")
+    });
+    counter++;
   });
 </script>
 
